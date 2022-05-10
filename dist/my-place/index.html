@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>My Place</title>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+  <script src='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js' defer></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css' rel='stylesheet' />
+  <link rel="stylesheet" href="../assets/styles/app.css" />
+  <link rel="stylesheet" href="../assets/styles/my-place.css" />
+  <script src="../assets/scripts/MyPlace.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <h1></h1>
+  </header>
+
+  <section id="selected-place">
+    <div id="map"></div>
+    <div id="menu">
+      <input id="satellite-v9" type="radio" name="rtoggle" value="satellite" checked="checked">
+      <!-- See a list of Mapbox-hosted public styles at -->
+      <!-- https://docs.mapbox.com/api/maps/styles/#mapbox-styles -->
+      <label for="satellite-v9">Satellite</label>
+      <input id="light-v10" type="radio" name="rtoggle" value="light">
+      <label for="light-v10">Light</label>
+      <input id="dark-v10" type="radio" name="rtoggle" value="dark">
+      <label for="dark-v10">Dark</label>
+      <input id="streets-v11" type="radio" name="rtoggle" value="streets">
+      <label for="streets-v11">Streets</label>
+      <input id="outdoors-v11" type="radio" name="rtoggle" value="outdoors">
+      <label for="outdoors-v11">Outdoors</label>
+    </div>
+  </section>
+
+  <section id="share-controls">
+    <a href="/">Share a New Place!</a>
+  </section>
+</body>
+
+</html>
