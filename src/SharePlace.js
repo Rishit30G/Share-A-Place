@@ -77,7 +77,7 @@ class PlaceFinder {
         modal.hide();
         Swal.fire({
           icon: 'error',
-          title: 'Unable to fetch location, please enter the location manually',
+          text: 'Unable to fetch location, please enter the location manually',
           showConfirmButton: false,
           timer: 2000,
         });
@@ -91,7 +91,7 @@ class PlaceFinder {
     if (!address || address.trim().length === 0) {
       Swal.fire({
         icon: 'error',
-        title: 'Please enter a valid address',
+        text: 'Please enter a valid address',
         showConfirmButton: false,
         timer: 1500,
       });

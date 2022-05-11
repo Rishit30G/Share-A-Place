@@ -21,7 +21,6 @@ export class Map {
       center: coordinates, // starting position [lng, lat]
       zoom: 14, // starting zoom
       cooperativeGestures: true,
-      projection: "naturalEarth",
     });
 
     //Add a marker to the map
