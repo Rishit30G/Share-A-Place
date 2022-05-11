@@ -7,5 +7,6 @@
 - Now `npm run build:dev` to get the localhost link and the project will be live on your browser 
 - Feel free to raise a PR for queries/bugs/feedback 
 
-https://user-images.githubusercontent.com/74411873/167645378-701b533f-f8c5-4911-a55f-622579d65daa.mp4
+
+https://user-images.githubusercontent.com/74411873/167843052-17395cc2-a549-4f2c-b4ad-25bd6c0c49eb.mp4
 
