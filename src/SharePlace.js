@@ -38,15 +38,20 @@ class PlaceFinder {
   }
 
   selectPlace(coordinates, address) {
-    if (this.map) {
-      this.map.render(coordinates);
-    } else {
-      this.map = new Map(coordinates);
-    }
     this.shareBtn.disabled = false;
     const sharedLinkInputElement = document.getElementById("share-link");
     const uriAddress = encodeURI(address);
     sharedLinkInputElement.value = `${location.origin}/my-place?address=${uriAddress}&lat=${coordinates.lat}&lng=${coordinates.lng}`;
+
+    const updateCoods = (changedLat, changedLng) =>
+    {
+        sharedLinkInputElement.value = `${location.origin}/my-place?address=${uriAddress}&lat=${changedLat}&lng=${changedLng}`;
+    }
+    if (this.map) {
+      this.map.render(coordinates, updateCoods);
+    } else {
+      this.map = new Map(coordinates, updateCoods);
+    }
   }
 
   locateUserHandler() {

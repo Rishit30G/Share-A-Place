@@ -1,9 +1,9 @@
 export class Map {
-  constructor(coords) {
-    this.render(coords);
+  constructor(coords, coordsCallback) {
+    this.render(coords, coordsCallback);
   }
 
-  render(coordinates) {
+  render(coordinates, coordsCallback) {
     if (!mapboxgl) {
       Swal.fire({
         icon: 'info',
@@ -24,12 +24,15 @@ export class Map {
     });
 
     //Add a marker to the map
-    new mapboxgl.Marker({
-      draggable: false,
+    const marker = new mapboxgl.Marker({
+      draggable: true,
     })
-      .setLngLat(coordinates)
-      .addTo(map);
-
+    .setLngLat(coordinates)
+    .addTo(map);
+    marker.on('dragend',function(e){
+        const lngLat = e.target.getLngLat();
+        coordsCallback(lngLat['lat'], lngLat['lng']);
+    })
     //Add a Zoom in button
     map.addControl(new mapboxgl.NavigationControl());
     //Add a Zoom out button
