@@ -23,18 +23,18 @@ class PlaceFinder {
     }
 
     navigator.clipboard.writeText(sharedLinkInputElement.value)
-     .then(()=>{
-      Swal.fire({
-        title: "Copied to clipboard!",
-        text: "Share this link with your friends!",
-        icon: "success",
-        confirmButtonText: "OK",
-      });
-     })
-     .catch(err => {
-       console.log(err);
-       sharedLinkInputElement.select();
-     })
+      .then(() => {
+        Swal.fire({
+          title: "Copied to clipboard!",
+          text: "Share this link with your friends!",
+          icon: "success",
+          confirmButtonText: "OK",
+        });
+      })
+      .catch(err => {
+        console.log(err);
+        sharedLinkInputElement.select();
+      })
   }
 
   selectPlace(coordinates, address) {
@@ -53,7 +53,7 @@ class PlaceFinder {
     //Incase the browser does not support geolocation
     if (!navigator.geolocation) {
       Swal.fire({
-        icon: 'info', 
+        icon: 'info',
         title: 'Geolocation is not supported by your browser',
         showConfirmButton: false,
         timer: 1500,
