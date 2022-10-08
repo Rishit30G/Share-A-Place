@@ -6,8 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>Share a Place</title>
-  <link rel="stylesheet" href="assets/styles/app.css" />
-  <link rel="stylesheet" href="assets/styles/share-place.css" />
+  <link rel="stylesheet" href="assets/styles/app.css" id="theme-link" />
+  <link rel="stylesheet" href="assets/styles/share-place.css" id="share-places-theme-link" />
+
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
   <script src='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js' defer></script>
   <link href='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css' rel='stylesheet' />
@@ -27,6 +28,8 @@
 
   <header>
     <h1>Share a Place!</h1>
+    <button id="tglBtn" class="btn-toogle" type="button"
+      style="padding: 5px; position: relative; left: 200px;">Dark</button>
   </header>
 
   <section id="selected-place">
@@ -62,6 +65,29 @@
     </form>
     <button id="locate-btn">Get Current Location</button>
   </section>
+
+  <script>
+
+    var btn = document.getElementById("tglBtn");
+
+    btn.onclick = function () {
+      const theme = document.querySelector("#theme-link");
+      const sharePlaceTheme = document.querySelector("#share-places-theme-link");
+
+
+      if (theme.getAttribute("href") == "assets/styles/dark.css") {
+        console.log("DARK");
+        theme.href = "assets/styles/app.css";
+        sharePlaceTheme.href = "assets/styles/share-place.css";
+        document.querySelector(".btn-toogle").innerHTML = "Dark";
+      } else {
+        console.log("LIGHT");
+        theme.href = "assets/styles/dark.css";
+        sharePlaceTheme.href = "assets/styles/dark-share-place.css"
+        document.querySelector(".btn-toogle").innerHTML = "Light";
+      }
+    }
+  </script>
 </body>
 
 </html>

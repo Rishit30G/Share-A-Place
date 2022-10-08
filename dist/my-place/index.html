@@ -9,14 +9,16 @@
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
   <script src='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js' defer></script>
   <link href='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css' rel='stylesheet' />
-  <link rel="stylesheet" href="../assets/styles/app.css" />
-  <link rel="stylesheet" href="../assets/styles/my-place.css" />
+  <link rel="stylesheet" href="../assets/styles/app.css" id="theme-link"/>
+  <link rel="stylesheet" href="../assets/styles/my-place.css" id="my-places"/>
   <script src="../assets/scripts/MyPlace.js" defer></script>
 </head>
 
 <body>
   <header>
     <h1></h1>
+    <button id="tglBtn" class="btn-toogle" type="button"
+      style="padding: 5px; position: relative; left: 200px;">Dark</button>
   </header>
 
   <section id="selected-place">
@@ -40,6 +42,29 @@
   <section id="share-controls">
     <a href="/">Share a New Place!</a>
   </section>
+
+  <script>
+
+    var btn = document.getElementById("tglBtn");
+
+    btn.onclick = function () {
+      const theme = document.querySelector("#theme-link");
+      const myPlaceTheme = document.querySelector("#my-places");
+
+
+      if (theme.getAttribute("href") === "../assets/styles/dark.css") {
+        console.log("DARK");
+        theme.href = "../assets/styles/app.css";
+        myPlaceTheme.href = "../assets/styles/my-place.css";
+        document.querySelector(".btn-toogle").innerHTML = "Dark";
+      } else{
+        console.log("LIGHT");
+        theme.href = "../assets/styles/dark.css";
+        mysharePlaceTheme.href = "../assets/styles/dark-my-place.css"
+        document.querySelector(".btn-toogle").innerHTML = "Light";
+      }
+    }
+  </script>
 </body>
 
 </html>
