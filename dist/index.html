@@ -6,9 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>Share a Place</title>
+<!--           CSS Links -->
   <link rel="stylesheet" href="assets/styles/app.css" id="theme-link" />
   <link rel="stylesheet" href="assets/styles/share-place.css" id="share-places-theme-link" />
 
+<!--                 JavaScript Links -->
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
   <script src='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js' defer></script>
   <link href='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css' rel='stylesheet' />
@@ -26,12 +28,14 @@
     </div>
   </template>
 
+<!--             Header Section -->
   <header>
     <h1>Share a Place!</h1>
     <button id="tglBtn" class="btn-toogle" type="button"
       style="padding: 5px; position: relative; left: 200px;">Dark</button>
   </header>
 
+<!--                   Body Section -->
   <section id="selected-place">
     <div id="map">
       <p style="padding-top: 50px">Please enter an address or locate yourself!</p>
@@ -66,6 +70,8 @@
     <button id="locate-btn">Get Current Location</button>
   </section>
 
+
+<!--             In Line JavaScript -->
   <script>
 
     var btn = document.getElementById("tglBtn");
