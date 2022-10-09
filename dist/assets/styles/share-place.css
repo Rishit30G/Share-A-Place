@@ -25,6 +25,7 @@ input:focus {
 }
 
 #selected-place {
+  position: relative;
   width: 40rem;
   height: 25rem;
   max-width: 90%;
@@ -42,7 +43,7 @@ input:focus {
 
 #menu {
   position: absolute;
-  top: 97px;
+  top: 1px;
   padding-left: 4px;
   flex: 100%;
   display: flex;
@@ -59,7 +60,6 @@ input:focus {
   width: 40rem;
   max-width: 90%;
   margin: 2rem auto;
-  border: 1px solid #ccc;
   padding: 1rem;
   text-align: center;
 }
@@ -72,7 +72,11 @@ input:focus {
   width: 40rem;
   max-width: 90%;
   margin: 2rem auto;
-  border: 1px solid #ccc;
   padding: 1rem;
   text-align: center;
+}
+
+.box-border-custom {
+  border: 1.5px solid black;
+  border-radius: 9px;
 }
