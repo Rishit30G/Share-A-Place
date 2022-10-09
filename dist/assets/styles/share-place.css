@@ -3,27 +3,21 @@ input {
   display: block;
   width: 100%;
 }
-
 label {
-  /* font-weight: bold;
-  margin: 0.5rem 0; */
+  /* font-weight: bold; margin: 0.5rem 0; */
 }
-
 input {
-  
   padding: 0.15rem 0.25rem;
   border: 1px solid #ccc;
   font-size: 2rem;
   text-align: center;
   color: #7c7c7c;
 }
-
 input:focus {
   outline: none;
   background: #efe3ff;
   border-color: #bfbdc2;
 }
-
 #selected-place {
   width: 40rem;
   height: 25rem;
@@ -31,30 +25,29 @@ input:focus {
   margin: 2rem auto;
   border: 1px solid #ccc;
 }
-
 #map {
   width: 100%;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
-
+#map p {
+  margin: 10rem;
+}
 #menu {
   position: absolute;
-  top: 97px;
+  top: 150px;
   padding-left: 4px;
   flex: 100%;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   padding: 5px;
+  margin: 3rem;
   font-family: 'Open Sans', sans-serif;
 }
-
-
+#menu label {
+  margin: 1rem;
+}
 #share-controls {
   width: 40rem;
   max-width: 90%;
@@ -63,11 +56,9 @@ input:focus {
   padding: 1rem;
   text-align: center;
 }
-
 #share-controls input {
   font-size: 1.15rem;
 }
-
 #place-data {
   width: 40rem;
   max-width: 90%;
