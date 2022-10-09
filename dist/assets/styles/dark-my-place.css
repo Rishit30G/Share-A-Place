@@ -1,5 +1,6 @@
 
 #selected-place {
+  position: relative;
   width: 40rem;
   height: 25rem;
   max-width: 90%;
@@ -17,7 +18,7 @@
 
 #menu {
   position: absolute;
-  top: 97px;
+  top: 1px;
   padding-left: 4px;
   flex: 100%;
   display: flex;
