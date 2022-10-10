@@ -1,6 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Share a Place</title>
+    <link rel="stylesheet" href="assets/styles/app.css" id="theme-link" />
+    <link
+      rel="stylesheet"
+      href="assets/styles/share-place.css"
+      id="share-places-theme-link"
+    />
 
+<<<<<<< HEAD
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+    <script
+      src="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js"
+      defer
+    ></script>
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <script src="assets/scripts/SharePlace.js" defer></script>
+    <link rel="icon" href="./assets/placeholder.png" type="image/icon type" />
+  </head>
+=======
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,49 +34,130 @@
   <link rel="icon" type="image/x-icon" href="/assets/favicon.png">
   <link rel="stylesheet" href="assets/styles/app.css" id="theme-link" />
   <link rel="stylesheet" href="assets/styles/share-place.css" id="share-places-theme-link" />
+>>>>>>> b188fcd1379c1dc02cd2b56f8e24e1f4f70add6b
 
-  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
-  <script src='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js' defer></script>
-  <link href='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css' rel='stylesheet' />
-  <script src="assets/scripts/SharePlace.js" defer></script>
-</head>
+  <body>
+    <template id="modal-template">
+      <div class="backdrop"></div>
+      <div class="modal"></div>
+    </template>
+    <template id="loading-modal-content">
+      <div class="modal__content centered">
+        <div class="lds-dual-ring"></div>
+      </div>
+    </template>
 
-<body>
-  <template id="modal-template">
-    <div class="backdrop"></div>
-    <div class="modal"></div>
-  </template>
-  <template id="loading-modal-content">
-    <div class="modal__content centered">
-      <div class="lds-dual-ring"></div>
-    </div>
-  </template>
+    <header>
+      <h1>Share a Place!</h1>
+      <button
+        id="tglBtn"
+        class="btn-toogle"
+        type="button"
+        style="
+          padding: 5px;
+          position: relative;
+          left: 200px;
+          border: 1px solid black;
+          /* border-radius: 50px; */
+        "
+      >
+        <img
+          src="./assets/night-mode.png"
+          alt="Night-mode"
+          style="width: 35px; height: 35px"
+        />
+      </button>
+    </header>
+    <section id="selected-place">
+      <div id="menu">
+        <input
+          id="satellite-v9"
+          type="radio"
+          name="rtoggle"
+          value="satellite"
+          checked="checked"
+        />
+        <!-- See a list of Mapbox-hosted public styles at -->
+        <!-- https://docs.mapbox.com/api/maps/styles/#mapbox-styles -->
+        <label for="light-v10">Satellite</label>
+        <input id="light-v10" type="radio" name="rtoggle" value="light" />
+        <label for="light-v10">Light</label>
+        <input id="dark-v10" type="radio" name="rtoggle" value="dark" />
+        <label for="dark-v10">Dark</label>
+        <input id="streets-v11" type="radio" name="rtoggle" value="streets" />
+        <label for="streets-v11">Streets</label>
+        <input id="outdoors-v11" type="radio" name="rtoggle" value="outdoors" />
+        <label for="outdoors-v11">Outdoors</label>
+      </div>
+      <div id="map">
+        <p style="padding-top: 50px">
+          Please enter an address or locate yourself!
+        </p>
+      </div>
+    </section>
 
+<<<<<<< HEAD
+    <section id="share-controls">
+      <input
+        id="share-link"
+        type="text"
+        readonly
+        value="Select a place to get a sharable link."
+      />
+      <button id="share-btn" disabled>Share Place</button>
+    </section>
+=======
   <header>
     <img alt="Share A Place" height="100" src="/assets/logo.png"></img>
     <button id="tglBtn" class="btn-toogle" type="button">Dark Mode</button>
   </header>
+>>>>>>> b188fcd1379c1dc02cd2b56f8e24e1f4f70add6b
 
-  <section id="selected-place">
-    <div id="map">
-      <p style="padding-top: 50px">Please enter an address or locate yourself!</p>
-    </div>
-    <div id="menu">
-      <input id="satellite-v9" type="radio" name="rtoggle" value="satellite" checked="checked">
-      <!-- See a list of Mapbox-hosted public styles at -->
-      <!-- https://docs.mapbox.com/api/maps/styles/#mapbox-styles -->
-      <label for="satellite-v9">Satellite</label>
-      <input id="light-v10" type="radio" name="rtoggle" value="light">
-      <label for="light-v10">Light</label>
-      <input id="dark-v10" type="radio" name="rtoggle" value="dark">
-      <label for="dark-v10">Dark</label>
-      <input id="streets-v11" type="radio" name="rtoggle" value="streets">
-      <label for="streets-v11">Streets</label>
-      <input id="outdoors-v11" type="radio" name="rtoggle" value="outdoors">
-      <label for="outdoors-v11">Outdoors</label>
-    </div>
-  </section>
+    <section id="place-data">
+      <form>
+        <label for="address" style="font-size: 25px; color: grey"
+          >Address</label
+        >
+        <input type="text" />
+        <button type="submit">Find Place</button>
+      </form>
+      <button id="locate-btn">Get Current Location</button>
+    </section>
 
+<<<<<<< HEAD
+    <script>
+      var btn = document.getElementById("tglBtn");
+
+      btn.onclick = function () {
+        const theme = document.querySelector("#theme-link");
+        const sharePlaceTheme = document.querySelector(
+          "#share-places-theme-link"
+        );
+
+        if (theme.getAttribute("href") == "assets/styles/dark.css") {
+          console.log("DARK");
+          theme.href = "assets/styles/app.css";
+          sharePlaceTheme.href = "assets/styles/share-place.css";
+          document.querySelector(".btn-toogle").innerHTML = `<img
+          src="./assets/night-mode.png"
+          alt="Night-mode"
+          style="width: 35px; height: 35px"
+        />`;
+        } else {
+          console.log("LIGHT");
+          theme.href = "assets/styles/dark.css";
+          sharePlaceTheme.href = "assets/styles/dark-share-place.css";
+          document.querySelector(".btn-toogle").innerHTML = `<img
+          src="./assets/brightness.png"
+          alt="Night-mode"
+          style="width: 35px; height: 35px"
+        />`;
+        }
+      };
+    </script>
+  </body>
+</html>
+=======
   <section id="share-controls" class="box-border-custom">
     <input id="share-link" type="text" readonly value="Select a place to get a sharable link." class="box-border-custom"/>
     <button id="share-btn" disabled>Share Place</button>
@@ -91,3 +197,4 @@
 </body>
 
 </html>
+>>>>>>> b188fcd1379c1dc02cd2b56f8e24e1f4f70add6b
