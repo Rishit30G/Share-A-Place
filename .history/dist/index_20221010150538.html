@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Share a Place</title>
+  <link rel="stylesheet" href="assets/styles/app.css" id="theme-link" />
+  <link rel="stylesheet" href="assets/styles/share-place.css" id="share-places-theme-link" />
+
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+  <script src='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js' defer></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css' rel='stylesheet' />
+  <script src="assets/scripts/SharePlace.js" defer></script>
+</head>
+
+<body>
+  <template id="modal-template">
+    <div class="backdrop"></div>
+    <div class="modal"></div>
+  </template>
+  <template id="loading-modal-content">
+    <div class="modal__content centered">
+      <div class="lds-dual-ring"></div>
+    </div>
+  </template>
+
+  <header>
+    <img alt="Share A Place" height="142" src="/assets/logo.png"></img>
+    <button id="tglBtn" class="btn-toogle" type="button">Dark Mode</button>
+  </header>
+
+  <section id="selected-place">
+    <div id="map">
+      <p style="padding-top: 50px">Please enter an address or locate yourself!</p>
+    </div>
+    <div id="menu">
+      <input id="satellite-v9" type="radio" name="rtoggle" value="satellite" checked="checked">
+      <!-- See a list of Mapbox-hosted public styles at -->
+      <!-- https://docs.mapbox.com/api/maps/styles/#mapbox-styles -->
+      <label for="satellite-v9">Satellite</label>
+      <input id="light-v10" type="radio" name="rtoggle" value="light">
+      <label for="light-v10">Light</label>
+      <input id="dark-v10" type="radio" name="rtoggle" value="dark">
+      <label for="dark-v10">Dark</label>
+      <input id="streets-v11" type="radio" name="rtoggle" value="streets">
+      <label for="streets-v11">Streets</label>
+      <input id="outdoors-v11" type="radio" name="rtoggle" value="outdoors">
+      <label for="outdoors-v11">Outdoors</label>
+    </div>
+  </section>
+
+  <section id="share-controls" class="box-border-custom">
+    <input id="share-link" type="text" readonly value="Select a place to get a sharable link." class="box-border-custom"/>
+    <button id="share-btn" disabled>Share Place</button>
+  </section>
+
+  <section id="place-data" class="box-border-custom">
+    <form>
+      <label for="address" style="font-size: 25px; color: grey;">Address</label>
+      <input type="text" class="box-border-custom"/>
+      <button type="submit">Find Place</button>
+    </form>
+    <button id="locate-btn">Get Current Location</button>
+  </section>
+
+  <script>
+
+    var btn = document.getElementById("tglBtn");
+
+    btn.onclick = function () {
+      const theme = document.querySelector("#theme-link");
+      const sharePlaceTheme = document.querySelector("#share-places-theme-link");
+
+
+      if (theme.getAttribute("href") == "assets/styles/dark.css") {
+        console.log("DARK");
+        theme.href = "assets/styles/app.css";
+        sharePlaceTheme.href = "assets/styles/share-place.css";
+        document.querySelector(".btn-toogle").innerHTML = "Dark Mode";
+      } else {
+        console.log("LIGHT");
+        theme.href = "assets/styles/dark.css";
+        sharePlaceTheme.href = "assets/styles/dark-share-place.css"
+        document.querySelector(".btn-toogle").innerHTML = "Light Mode";
+      }
+    }
+  </script>
+</body>
+
+</html>

@@ -12,6 +12,7 @@
       id="share-places-theme-link"
     />
 
+<<<<<<< HEAD
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
     <script
       src="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js"
@@ -24,6 +25,16 @@
     <script src="assets/scripts/SharePlace.js" defer></script>
     <link rel="icon" href="./assets/placeholder.png" type="image/icon type" />
   </head>
+=======
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Share a Place</title>
+  <link rel="icon" type="image/x-icon" href="/assets/favicon.png">
+  <link rel="stylesheet" href="assets/styles/app.css" id="theme-link" />
+  <link rel="stylesheet" href="assets/styles/share-place.css" id="share-places-theme-link" />
+>>>>>>> b188fcd1379c1dc02cd2b56f8e24e1f4f70add6b
 
   <body>
     <template id="modal-template">
@@ -85,6 +96,7 @@
       </div>
     </section>
 
+<<<<<<< HEAD
     <section id="share-controls">
       <input
         id="share-link"
@@ -94,6 +106,12 @@
       />
       <button id="share-btn" disabled>Share Place</button>
     </section>
+=======
+  <header>
+    <img alt="Share A Place" height="100" src="/assets/logo.png"></img>
+    <button id="tglBtn" class="btn-toogle" type="button">Dark Mode</button>
+  </header>
+>>>>>>> b188fcd1379c1dc02cd2b56f8e24e1f4f70add6b
 
     <section id="place-data">
       <form>
@@ -106,6 +124,7 @@
       <button id="locate-btn">Get Current Location</button>
     </section>
 
+<<<<<<< HEAD
     <script>
       var btn = document.getElementById("tglBtn");
 
@@ -138,3 +157,44 @@
     </script>
   </body>
 </html>
+=======
+  <section id="share-controls" class="box-border-custom">
+    <input id="share-link" type="text" readonly value="Select a place to get a sharable link." class="box-border-custom"/>
+    <button id="share-btn" disabled>Share Place</button>
+  </section>
+
+  <section id="place-data" class="box-border-custom">
+    <form>
+      <label for="address" style="font-size: 25px; color: grey;">Address</label>
+      <input type="text" class="box-border-custom"/>
+      <button type="submit">Find Place</button>
+    </form>
+    <button id="locate-btn">Get Current Location</button>
+  </section>
+
+  <script>
+
+    var btn = document.getElementById("tglBtn");
+
+    btn.onclick = function () {
+      const theme = document.querySelector("#theme-link");
+      const sharePlaceTheme = document.querySelector("#share-places-theme-link");
+
+
+      if (theme.getAttribute("href") == "assets/styles/dark.css") {
+        console.log("DARK");
+        theme.href = "assets/styles/app.css";
+        sharePlaceTheme.href = "assets/styles/share-place.css";
+        document.querySelector(".btn-toogle").innerHTML = "Dark Mode";
+      } else {
+        console.log("LIGHT");
+        theme.href = "assets/styles/dark.css";
+        sharePlaceTheme.href = "assets/styles/dark-share-place.css"
+        document.querySelector(".btn-toogle").innerHTML = "Light Mode";
+      }
+    }
+  </script>
+</body>
+
+</html>
+>>>>>>> b188fcd1379c1dc02cd2b56f8e24e1f4f70add6b

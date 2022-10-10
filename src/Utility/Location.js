@@ -29,6 +29,11 @@ export async function getCoordsFromAddress(address) {
   if (data.error_message) {
     throw new Error(data.error_message);
   }
+  
+  if (data.features==null || data.features.length==0) {
+    throw new Error("The place does not exist!");
+  }
+
   const coordinates = {
     lat: data.features[0].geometry.coordinates[1],
     lng: data.features[0].geometry.coordinates[0],

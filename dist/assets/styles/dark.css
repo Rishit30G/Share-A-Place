@@ -14,10 +14,10 @@
   header {
     background: #212121;
     width: 100%;
-    height: 4rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0.8rem;
   }
   
   header h1 {
@@ -118,6 +118,24 @@
     .modal {
       left: calc(50% - 15rem);
       width: 30rem;
+    }
+  }
+
+  #tglBtn{
+    position: absolute;
+    right: 4rem;
+    padding: 7px;
+    margin: 0;
+  }
+  
+  @media (max-width: 550px) {
+    #tglBtn{
+      display: block;
+      position: relative;
+      right: 0px
+    }
+    header {
+      flex-direction: column;
     }
   }
   
