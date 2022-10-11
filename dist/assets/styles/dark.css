@@ -24,6 +24,8 @@
     font-size: 2rem;
     color: #14FFEC;
     margin: 0;
+    flex:1;
+    text-align: center;
   }
   
   button {

@@ -2,17 +2,18 @@
   .toggle-button{
     margin:0 3rem;
     width: 100%;
+    flex:0.1;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
   }
   .themeLabel{
     font-size:1rem;
   }
   .toggle_container {
-    width: 5.5rem;
-    height: 2.8rem;
+    width: 5.1rem;
+    height: 2.6rem;
     z-index: 1000;
     margin: -4px -2px; 
     border-radius: 500px;
@@ -23,8 +24,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 5.5rem;
-    height: 2.8rem;
+    width: 5.1rem;
+    height: 2.6rem;
     background:#2C3333;
     border-radius: 500px;
     border: solid 5px transparent;
@@ -33,21 +34,21 @@
   }
   
   .toggle__wrapper {
-    width: 4.5rem;
-    height:2.5rem;
+    width: 4.1rem;
+    height:2.2rem;
     margin: -4px -2px; 
     border-radius: 500px;
     background: linear-gradient(#2C3333, #2C3333 );
-    box-shadow: 0px 5px 1px  0 #2c3333b2;
+    
   }
 
    
 
   .toggle__bg {
-    width:4.5rem;
-    height: 2.5rem;
+    width:4.1rem;
+    height: 2.2rem;
     background:#2C3333;
-    background: linear-gradient(to right,#F54768 50%, #2C3333 50% 100%);
+    background: linear-gradient(to right,#14FFEC 50%, #2C3333 50% 100%);
     background-size: 200% 100%;
     background-position: 75%;
     border-radius: 500px;
@@ -59,14 +60,14 @@
   
   .toggle__sphere {
     position: relative;
-    height:2rem;
-    width: 2rem;
-    background:  #2C3333;
+    height:1.7rem;
+    width: 1.7rem;
+    background: white;
     background: 
-      linear-gradient(to right,  #2C3333 50%, #2C3333 50% 100%);
+      linear-gradient(to right, white 50%, #F54768  50% 100%);
     border-radius: 50%;
     transform-origin: top left;
-    transform: translateY(1px);
+    
     box-shadow:  
       2px 0px 5px 1px hsla(18, 77%, 15%, 0.05), 
       0px 10px 10px 1px hsla(18, 77%, 15%, 0.2), 
@@ -86,13 +87,7 @@
     box-shadow: 0px 0px 10px 0px hsla(0, 0%, 0%, 0.25);
   }
   
-  .toggle__sphere:before {
-    top: -1px;
-  }
-  
-  .toggle__sphere:after {
-    bottom: -1px;
-  }
+ 
   
   .toggle__sphere-overlay {
     position: absolute;
@@ -125,12 +120,12 @@
   }
   
   .toggle__sphere-bg:before {
-    background-color:#F54768   ;
+    background-color:white  ;
     border-radius: 50%;
   }
   
   .toggle__sphere-bg:after {
-    background-color: hsla(199, 43%, 59%, 1);
+    background-color: #F54768 ;
     transform: rotateY(180deg);
     border-radius: 50%;
   }
@@ -162,6 +157,8 @@
   @media (max-width:500px) {
     .toggle-button{
         flex-direction:row;
+        align-items: center;
+        justify-content: center;
     }
   }
   

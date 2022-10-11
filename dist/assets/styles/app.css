@@ -24,6 +24,8 @@ header h1 {
   font-size: 2rem;
   color: white;
   margin: 0;
+  flex:1;
+  text-align: center;
 }
 
 button {
@@ -119,6 +121,7 @@ button:disabled:active {
     left: calc(50% - 15rem);
     width: 30rem;
   }
+ 
 }
 
 #tglBtn{
@@ -137,4 +140,10 @@ button:disabled:active {
   header {
     flex-direction: column;
   }
+  header> h1 {
+    text-align: start;
+  }
 }
+
+
+
