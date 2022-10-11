@@ -11,13 +11,31 @@
   <link href='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css' rel='stylesheet' />
   <link rel="stylesheet" href="../assets/styles/app.css" id="theme-link"/>
   <link rel="stylesheet" href="../assets/styles/my-place.css" id="my-places"/>
+  <link rel="stylesheet" href="../assets/styles/toggle-button.css" id="toggle_button_link" />
+
   <script src="../assets/scripts/MyPlace.js" defer></script>
 </head>
 
 <body>
   <header>
     <h1></h1>
-    <button id="tglBtn" class="btn-toogle" type="button">Dark Mode</button>
+    <!-- Toggle button -->
+    <div class="toggle-button ">  
+      <label class="toggle">
+        <div  class="toggle__wrapper">
+          <input id="toggleBtn" type="checkbox">
+          <div  class="toggle__bg">
+            <div class="toggle__sphere">
+              <div class="toggle__sphere-bg">
+             </div>
+           <div class="toggle__sphere-overlay"></div>
+         </div>
+       </div>
+     </div>
+   </label>
+   <h1 class="themeLabel">Light Mode</h1>  
+ </div>
+</div>
   </header>
 
   <section id="selected-place">
@@ -44,7 +62,7 @@
 
   <script>
 
-    var btn = document.getElementById("tglBtn");
+    var btn = document.getElementById("toggleBtn");
 
     btn.onclick = function () {
       const theme = document.querySelector("#theme-link");
@@ -55,12 +73,12 @@
         console.log("DARK");
         theme.href = "../assets/styles/app.css";
         myPlaceTheme.href = "../assets/styles/my-place.css";
-        document.querySelector(".btn-toogle").innerHTML = "Dark";
+        document.querySelector(".themeLabel").innerHTML = "Light Mode";
       } else{
         console.log("LIGHT");
         theme.href = "../assets/styles/dark.css";
         mysharePlaceTheme.href = "../assets/styles/dark-my-place.css"
-        document.querySelector(".btn-toogle").innerHTML = "Light";
+        document.querySelector(".themeLabel").innerHTML = "Dark Mode";
       }
     }
   </script>

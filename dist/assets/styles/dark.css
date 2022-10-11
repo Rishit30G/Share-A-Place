@@ -14,6 +14,7 @@
   header {
     background: #212121;
     width: 100%;
+    color: #14FFEC;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,6 +25,17 @@
     font-size: 2rem;
     color: #14FFEC;
     margin: 0;
+    flex:1;
+    text-align: center;
+  }
+  .site_logo {
+    font-size: 2rem;
+    color: #14FFEC;
+    margin: 0;
+    flex:1;
+    width: 100%;
+    display: flex;
+    justify-content:center;
   }
   
   button {
