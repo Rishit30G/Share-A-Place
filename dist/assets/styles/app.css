@@ -15,6 +15,7 @@ header {
   width: 100%;
   display: flex;
   justify-content: center;
+  color: white;
   align-items: center;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.26);
   padding: 0.8rem;
@@ -27,6 +28,16 @@ header h1 {
   flex:1;
   text-align: center;
 }
+.site_logo {
+  font-size: 2rem;
+  color: white;
+  margin: 0;
+  flex:1;
+  width: 100%;
+  display: flex;
+  justify-content:center;
+}
+
 
 button {
   font: inherit;
@@ -140,9 +151,7 @@ button:disabled:active {
   header {
     flex-direction: column;
   }
-  header> h1 {
-    text-align: start;
-  }
+  
 }
 
 
